@@ -1,0 +1,28 @@
+{
+  "name": "bs-flat-cache",
+  "version": "1.0.0",
+  "description": "Bucklescript binding for flat-cache",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && eval $(dependencyEnv) && nopam && bsb 2>&1 | berror.native --path-to-refmttype $(which refmttype)",
+    "build-no-be": "bsb",
+    "watch": "npm run clean && eval $(dependencyEnv) && nopam && bsb -make-world -w 2>&1 | berror.native --path-to-refmttype $(which refmttype)",
+    "clean": "bsb -clean-world"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "author": "Ryan Biwer",
+  "_": [],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ryb73/bs-flat-cache.git"
+  },
+  "devDependencies": {
+    "bs-platform": "1.7.3",
+    "dependency-env": "0.1.1",
+    "flat-cache": "1.2.2",
+    "nopam": "0.1.0",
+    "ocamlBetterErrors": "0.1.1"
+  }
+}
