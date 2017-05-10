@@ -5,7 +5,7 @@ external clearAll : unit => unit = "" [@@bs.module "flat-cache"];
 external clearCacheById : string => unit = "" [@@bs.module "flat-cache"];
 
 external removeKey : string => t => unit = "" [@@bs.send];
-external save : t => unit = "" [@@bs.send];
+external save : t => (_ [@bs.as {json|true|json} ]) => unit = "" [@@bs.send];
 
 module type CacheItem = { type t; };
 module Make(CacheItem : CacheItem) => {
